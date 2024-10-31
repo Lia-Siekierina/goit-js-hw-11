@@ -18,4 +18,24 @@ function fetchImages(query, renderFn) {
     loader.style.display = 'block';
 
     // _______________
+    fetch(url)
+        .then(res => {
+            if (!res.ok) {
+            throw new Error(res.status);
+        }
+            return res.json();
+})
+    .then(data => {
+        const pictures = data.hits;
+        if (pictures.length === 0) {
+            iziToast.error({
+        
+            });
+        }
+        loader.style.display = 'none';
+        renderFn(pictures);
+    })
+    .catch(e => console.log(e));
 }
+
+export default getPictures;
