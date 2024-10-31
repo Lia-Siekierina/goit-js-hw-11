@@ -9,15 +9,15 @@ function fetchImages(query, renderFn) {
     const searchParams = new URLSearchParams({
         key: API_KEY,
         q: query,
-        image_type: photo,
-        orientation: horizontal,
+        image_type: 'photo',
+        orientation: 'horizontal',
         safesearch: true,
     });
     const url = 'https://pixabay.com/api/?${searchParams}';
 
     loader.style.display = 'block';
 
-    // _______________
+    // _______________??????????????????????????????????????
     fetch(url)
         .then(res => {
             if (!res.ok) {
