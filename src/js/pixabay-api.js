@@ -13,7 +13,7 @@ function fetchImages(query, renderFn) {
         orientation: 'horizontal',
         safesearch: true,
     });
-    const url = 'https://pixabay.com/api/?${searchParams}';
+    const url = `https://pixabay.com/api/?${searchParams}`;
 
     loader.style.display = 'block';
 
