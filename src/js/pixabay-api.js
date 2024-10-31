@@ -45,4 +45,4 @@ function fetchImages(query, renderFn) {
     .catch(e => console.log(e));
 }
 
-export default getPictures;
+export default fetchImages;
