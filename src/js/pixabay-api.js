@@ -7,11 +7,11 @@ const loader = document.querySelector('.loader');
 function fetchImages(query, renderFn) {
     
     const searchParams = new URLSearchParams({
-        key: API_KEY;
-        q: query;
-        image_type: photo;
-        orientation: horizontal;
-        safesearch: true;
+        key: API_KEY,
+        q: query,
+        image_type: photo,
+        orientation: horizontal,
+        safesearch: true,
     });
     const url = 'https://pixabay.com/api/?${searchParams}';
 
@@ -29,6 +29,13 @@ function fetchImages(query, renderFn) {
         const pictures = data.hits;
         if (pictures.length === 0) {
             iziToast.error({
+                title: 'No pictures found',
+                message: 'Sorry, there are no images matching your search query. Please try again',
+                messageColor: 'black',
+                messageSize: '14px',
+                position: 'topCenter',
+                timeout: 2500,
+                closeOnClick: true,
         
             });
         }
