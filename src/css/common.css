@@ -9,6 +9,7 @@ a {
 .js-search {
   margin: 30px 60px;
   width: 500px;
+  
 }
 
 .input-search {
@@ -60,6 +61,11 @@ a {
 }
 
 .gallery-item {
+  list-style: none;
+  max-width: calc((100% - 48px) / 3);
+  width: 100%;
+  border: 1px solid #666161;
+  box-sizing: border-box;
   border: 1px solid #808080;
 }
 
